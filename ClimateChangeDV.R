@@ -4,16 +4,14 @@ library(here)
 library(tidyverse)
 library(ggpubr)
 
-##################
-#Load & Clean Data
-##################
+# Load and clean data
 
 datalikert <- read_csv(here("data", "datalikert.csv"))
 datalikert
 
 ###################
 
-# Compute medians and IQRs for each Likert question:
+# Compute medians and IQRs for each Likert scale statement:
 
 datmedians <- t(datalikert %>%
   group_by(group) %>%
